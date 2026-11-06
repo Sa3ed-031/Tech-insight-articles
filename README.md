@@ -1,6 +1,6 @@
 # Tech Insight – Tech Articles Blog
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://sa3ed-articles-blog-project.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://sa3ed-tech-insights-articles.netlify.app/)
 
 Tech Insight is a responsive tech blog built with React. It loads real, up-to-date articles from the [DEV Community API](https://developers.forem.com/api) and lets you browse them in list or grid view, filter them by topic, bookmark the ones you like, and read each one on its own page with related articles.
 
@@ -22,8 +22,7 @@ Tech Insight is a responsive tech blog built with React. It loads real, up-to-da
 - [React](https://react.dev/) 19
 - [React Router](https://reactrouter.com/) 7
 - [Vite](https://vite.dev/) 7
-- [MUI](https://mui.com/) (icons and loading spinner)
-- CSS for styling
+- CSS Modules for styling
 - [Poppins](https://fontsource.org/fonts/poppins) via `@fontsource/poppins`
 - [DEV Community (Forem) API](https://developers.forem.com/api)
 - Deployed on [Netlify](https://www.netlify.com/)
