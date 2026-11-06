@@ -1,0 +1,80 @@
+/* Featured article card on the home page */
+.card {
+  width: 30%;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  transition: box-shadow 300ms ease;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* The whole card is one link */
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.category {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.title {
+  color: var(--card-title);
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.readMore {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 85%;
+    margin: auto;
+  }
+}

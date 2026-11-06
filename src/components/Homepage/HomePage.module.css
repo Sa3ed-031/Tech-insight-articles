@@ -1,0 +1,168 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* ---------- Landing hero ---------- */
+.landing {
+  width: 100%;
+  min-height: 0;
+  height: stretch;
+  margin: 0;
+  color: var(--hero-text);
+  padding: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: var(--section-bg);
+  background-size: cover;
+  filter: brightness(0.9);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%),
+    url("/articles-project-landing-bg.png");
+}
+
+.landing h1 {
+  color: var(--hero-heading);
+}
+
+.landing p {
+  font-weight: 400;
+  margin: 30px 15px;
+  font-size: 1.2rem;
+}
+
+.cta {
+  padding: 1.2rem;
+  line-height: 1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  color: var(--on-primary);
+  background-color: var(--primary);
+}
+
+.cta:hover {
+  transform: scale(1.03);
+}
+
+/* ---------- Featured articles ---------- */
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  background-color: var(--section-bg);
+  /* The sticky navbar shouldn't cover the title when jumping to #homepage-content */
+  scroll-margin-top: 4rem;
+}
+
+/* Layout difference kept from the original design (not a color, so not a variable) */
+:global(:root[data-theme="dark"]) .featured {
+  margin: auto;
+}
+
+.featured h1 {
+  margin: 0;
+  color: var(--text);
+}
+
+.articles {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.articles>p {
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .articles {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 891px) {
+  .landing h1 {
+    font-size: 2.2rem;
+  }
+
+  .landing p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 802.4px) {
+  .landing h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .landing {
+    height: 50vh;
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .landing h1 {
+    font-size: 1.5rem;
+  }
+
+  .landing p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .landing {
+    height: 45vh;
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .landing h1 {
+    font-size: 1.2rem;
+  }
+
+  .landing p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 198px) {
+  .landing {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 10px 0;
+  }
+}

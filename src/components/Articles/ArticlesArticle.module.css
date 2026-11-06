@@ -1,0 +1,174 @@
+/* One article in the articles list */
+.article {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  border-radius: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  padding: 1.5rem 0;
+  box-shadow: var(--article-card-shadow);
+}
+
+.content {
+  width: auto;
+  padding: 0.9rem;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+
+/* Category, author/date and bookmark button */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category {
+  font-weight: 500;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border-radius: 9999px;
+  padding: 0.5rem 0.75rem;
+  color: var(--chip-text);
+  background-color: var(--chip-bg);
+}
+
+.category:hover {
+  text-decoration: none;
+  color: var(--chip-text-hover);
+  background-color: var(--chip-bg-hover);
+}
+
+/* Bookmark (save) button */
+.bookmark {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
+.bookmark:hover {
+  background-color: var(--primary-tint-10);
+}
+
+.bookmark.saved {
+  color: var(--primary);
+}
+
+.byline {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--text-muted);
+}
+
+.title {
+  margin: 0;
+}
+
+.titleLink {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-decoration: none;
+  color: var(--article-title);
+}
+
+.description {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--article-desc);
+}
+
+.readMore {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+.image {
+  width: 12rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.image img {
+  object-fit: cover;
+  width: 100%;
+  height: 8rem;
+  border-radius: 0.5rem;
+}
+
+/* ---------- Grid view: image on top, text below ---------- */
+.grid,
+.grid .article {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.grid .article {
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--grid-card-bg);
+  box-shadow: var(--grid-card-shadow);
+}
+
+.grid .image {
+  width: 100%;
+  margin: 0;
+}
+
+.grid .image img {
+  display: block;
+  height: 10rem;
+  border-radius: 15px 15px 0 0;
+}
+
+.grid .content {
+  padding: 1rem;
+}
+
+@media (max-width: 540px) {
+  .article {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 92%;
+    height: auto;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 336px) {
+  .meta {
+    flex-direction: column;
+  }
+
+  .byline {
+    margin: auto;
+  }
+}

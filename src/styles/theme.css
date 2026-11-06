@@ -1,0 +1,175 @@
+/*
+  All colors, named by role.
+  Light set on :root, dark set on :root[data-theme="dark"] (set by DarkModeContext).
+  A variable that doesn't change between modes is only defined in the light set.
+*/
+
+:root {
+  /* ---------- Base ---------- */
+  --bg: rgb(246 247 248);
+  --text: #313f47;
+  /* Page sections: see-through in light mode, solid in dark mode */
+  --section-bg: transparent;
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --border-subtle: rgb(120 113 108 / 0.2);
+
+  --primary: rgb(17 147 212);
+  --primary-hover: rgb(17 147 212 / 0.8);
+  --primary-tint-08: rgb(17 147 212 / 0.08);
+  --primary-tint-10: rgb(17 147 212 / 0.1);
+  --primary-tint-12: rgb(17 147 212 / 0.12);
+  --primary-tint-15: rgb(17 147 212 / 0.15);
+  --primary-tint-20: rgb(17 147 212 / 0.2);
+  --on-primary: rgb(255 255 255);
+  /* Primary color that stays readable on dark backgrounds */
+  --accent: rgb(17 147 212);
+
+  --button-hover-text: rgb(77, 163, 239);
+  --button-hover-bg: #f8f0f0;
+
+  --scrollbar-thumb: #313f47;
+  --scrollbar-track: white;
+
+  /* ---------- Header / navigation ---------- */
+  --header-text: #313f47;
+  --header-overlay: rgba(255, 255, 255, 0.7);
+  --header-border: none;
+  --header-shadow: var(--shadow);
+  --nav-link: #313f47;
+  --nav-toggle: #313f47;
+  --menu-bg: white;
+  --menu-border: #e5e7eb;
+  --menu-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  --signin-text: #075985;
+  --signin-text-hover: #075985;
+  --signin-bg: #d6ecf8;
+  --signin-bg-hover: #bfe1f4;
+
+  /* ---------- Dark mode toggle ---------- */
+  --toggle-track: lightgray;
+  --toggle-track-on: white;
+  --toggle-thumb: white;
+  --toggle-thumb-on: #313f47;
+
+  /* ---------- Footer ---------- */
+  --footer-border: #4a4a4a;
+  --footer-link: #4a4a4a;
+
+  /* ---------- Home page ---------- */
+  --hero-text: white;
+  --hero-heading: white;
+  --hero-overlay-top: rgba(0, 0, 0, 0.2);
+  --hero-overlay-bottom: rgba(0, 0, 0, 0.6);
+  --card-bg: rgb(255 255 255 / 0.5);
+  --card-title: #313f47;
+  --card-shadow-hover: 7px 7px 20px rgb(154, 154, 154);
+
+  /* ---------- Articles list ---------- */
+  --toolbar-bg: rgb(246 247 248);
+  --icon-btn: rgb(120 113 108);
+  --icon-btn-hover: rgb(41 37 36);
+  --icon-btn-hover-bg: rgb(231 229 228);
+  --icon-link-hover: rgb(41 37 36);
+  --filter-btn-text: rgb(255 255 255);
+  --filter-btn-bg: rgb(17 147 212);
+  --filter-btn-bg-hover: var(--primary-hover);
+  --dropdown-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+
+  --chip-text: rgb(17 147 212);
+  --chip-bg: var(--primary-tint-10);
+  --chip-text-hover: rgb(17 147 212);
+  --chip-bg-hover: var(--primary-tint-20);
+
+  --text-muted: rgb(120 113 108);
+  --article-title: rgb(28 25 23);
+  --article-desc: rgb(87 83 78);
+  --article-card-shadow: none;
+  --grid-card-bg: rgb(255 255 255 / 0.7);
+  --grid-card-shadow: var(--shadow);
+
+  --pager-text: rgb(87 83 78);
+  --pager-text-hover: rgb(87 83 78);
+  --pager-arrow: rgb(120 113 108);
+  --pager-arrow-hover: rgb(120 113 108);
+  --pager-hover-bg: rgb(231 229 228 / 0.8);
+  --pager-active-text: rgb(255 255 255);
+
+  /* ---------- Single article ---------- */
+  --heading-strong: #101c22;
+  --article-body-text: #101c22cc;
+  --link: #0b6a9c;
+  --link-hover: #075985;
+  --related-text: #101c22;
+  --related-shadow-hover: 1px 1px 20px #313f47;
+  --code-bg: #0d1117;
+  --code-text: #e6edf3;
+  --embed-border: rgba(128, 128, 128, 0.3);
+}
+
+:root[data-theme="dark"] {
+  /* ---------- Base ---------- */
+  --bg: #313f47;
+  --text: #f0f0f0;
+  --section-bg: #313f47;
+  --accent: #4fb3ea;
+
+  /* ---------- Header / navigation ---------- */
+  --header-text: #f8f0f0;
+  --header-overlay: rgb(37 48 54 / 0.92);
+  --header-border: 1px solid rgb(255 255 255 / 0.08);
+  --header-shadow: 0 4px 12px rgb(0 0 0 / 0.35);
+  --nav-link: #f0f0f0;
+  --menu-bg: #253036;
+  --menu-border: rgb(255 255 255 / 0.08);
+  --menu-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+
+  --signin-text: #e0f2fe;
+  --signin-text-hover: #ffffff;
+  --signin-bg: #1b4f6b;
+  --signin-bg-hover: #1f5f82;
+
+  /* ---------- Footer ---------- */
+  --footer-border: #f0f0f0;
+  --footer-link: #f0f0f0;
+
+  /* ---------- Home page ---------- */
+  --hero-text: #f0f0f0;
+  --card-bg: #313f47;
+  --card-title: #ffffff;
+  --card-shadow-hover: 1px 1px 20px #f0f0f083;
+
+  /* ---------- Articles list ---------- */
+  --toolbar-bg: #f0f0f0;
+  --icon-btn: #313f47;
+  --icon-btn-hover: #313f47;
+  --filter-btn-text: #313f47;
+  --filter-btn-bg: #f0f0f0;
+  --filter-btn-bg-hover: #f0f0f0;
+  --dropdown-shadow: 0 10px 25px rgb(0 0 0 / 0.5);
+
+  --chip-text: #000000;
+  --chip-bg: #f0f0f0;
+  --chip-bg-hover: var(--primary-tint-10);
+
+  --text-muted: #e5e7ebd0;
+  --article-title: #e5e7eb;
+  --article-desc: #e5e7ebd0;
+  --article-card-shadow: 0.1px 0.1px 8px #f0f0f0;
+  --grid-card-bg: #313f47;
+  --grid-card-shadow: 0.1px 0.1px 8px #f0f0f0;
+
+  --pager-text: #f0f0f0;
+  --pager-text-hover: #222;
+  --pager-arrow: #f0f0f0;
+  --pager-arrow-hover: #222;
+  --pager-active-text: #f0f0f0;
+
+  /* ---------- Single article ---------- */
+  --heading-strong: #f0f0f0;
+  --article-body-text: #f0f0f0;
+  --link: #7cc7f0;
+  --link-hover: #b5e0f8;
+  --related-text: #eceaead3;
+  --related-shadow-hover: 1px 1px 20px #f0f0f083;
+}

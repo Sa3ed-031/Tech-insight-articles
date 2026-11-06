@@ -1,0 +1,194 @@
+.header {
+  width: 100%;
+  height: 4rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 0.5rem;
+  color: var(--header-text);
+  background-color: transparent;
+  border-bottom: var(--header-border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--header-shadow);
+}
+
+/* See-through blurred background behind the header content */
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: var(--header-overlay);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Hamburger button, only shown on small screens */
+.dropdownToggle {
+  display: none;
+}
+
+.navIcon {
+  color: var(--accent);
+}
+
+.dropdown {
+  gap: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  margin: 0 15px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-decoration: none;
+  color: var(--nav-link);
+}
+
+/* Highlight the page you're on */
+.link.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.toggleWrap {
+  margin-right: 1.7rem;
+  background-color: transparent;
+}
+
+.signIn {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;
+  padding: 0 1rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  /* Opaque colors so contrast doesn't depend on the content scrolling behind
+     the see-through header. Text/background contrast: 6.2:1 light, 7.7:1 dark (WCAG AA) */
+  color: var(--signin-text);
+  background-color: var(--signin-bg);
+}
+
+/* Hover keeps AA contrast: 5.5:1 light / 7:1 dark */
+.signIn:hover {
+  color: var(--signin-text-hover);
+  background-color: var(--signin-bg-hover);
+}
+
+/* Hide the outline for mouse clicks only; keyboard focus still shows it */
+.signIn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .dropdownToggle {
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--nav-toggle);
+    padding: 0.5rem 1rem;
+  }
+
+  /* Mobile menu: full-width panel that drops down under the navbar */
+  .dropdown {
+    display: none;
+    /* Full-width rows with left-aligned links (desktop centers them) */
+    align-items: stretch;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    gap: 0;
+    height: auto;
+    z-index: 20;
+    flex-direction: column;
+    padding: 0.25rem 0;
+    background: var(--menu-bg);
+    border-top: 1px solid var(--menu-border);
+    border-radius: 0 0 0.75rem 0.75rem;
+    box-shadow: var(--menu-shadow);
+  }
+
+  .dropdown.open {
+    display: flex;
+  }
+
+  .link {
+    display: block;
+    margin: 0;
+    padding: 0.9rem 1.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--menu-border);
+  }
+
+  .link:last-child {
+    border-bottom: none;
+  }
+
+  .link:hover {
+    color: var(--primary);
+    background-color: var(--primary-tint-08);
+  }
+
+  /* Current page: colored text with a bar on the left */
+  .link.active {
+    color: var(--accent);
+    background-color: var(--primary-tint-10);
+    box-shadow: inset 3px 0 0 var(--primary);
+  }
+}
+
+@media (max-width: 430px) {
+  .dropdownToggle {
+    padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    margin: 0 0.5rem;
+  }
+
+  .toggleWrap {
+    margin-left: -1rem;
+  }
+
+  .signIn {
+    margin: 0;
+    margin-left: 1.1rem;
+  }
+}

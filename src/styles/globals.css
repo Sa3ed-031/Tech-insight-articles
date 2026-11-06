@@ -1,0 +1,60 @@
+/* App-wide base styles. Colors live in theme.css. */
+
+:root {
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  /* Same as the browser default for code, so code blocks look unchanged */
+  --font-mono: monospace;
+
+  font-family: var(--font-sans);
+}
+
+* {
+  transition: all 0.4s ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: 0.5s;
+}
+
+/* App shell: header, page and footer stacked; the page fills the free height */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+/* Fallback hover for buttons without their own styles (e.g. bookmark buttons,
+   buttons inside article HTML). :where() keeps specificity at 0 so any
+   component class wins. */
+:where(button:hover) {
+  color: var(--button-hover-text);
+  background-color: var(--button-hover-bg);
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
