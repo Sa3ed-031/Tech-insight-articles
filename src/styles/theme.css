@@ -105,6 +105,9 @@
   --code-bg: #0d1117;
   --code-text: #e6edf3;
   --embed-border: rgba(128, 128, 128, 0.3);
+  /* Tables inside article HTML */
+  --table-border: var(--border-subtle);
+  --table-header-bg: var(--primary-tint-10);
 }
 
 :root[data-theme="dark"] {
@@ -172,4 +175,7 @@
   --link-hover: #b5e0f8;
   --related-text: #eceaead3;
   --related-shadow-hover: 1px 1px 20px #f0f0f083;
+  /* --border-subtle is too faint on the dark background */
+  --table-border: rgb(255 255 255 / 0.18);
+  --table-header-bg: rgb(255 255 255 / 0.08);
 }

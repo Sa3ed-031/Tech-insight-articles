@@ -5,6 +5,7 @@
   gap: 0.75rem;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2rem;
   font-size: 1.3rem;
   border-top: 1px solid var(--footer-border);
   background-color: var(--section-bg);
@@ -64,7 +65,7 @@
   .footer {
     flex-direction: column;
     height: auto;
-    padding: 10px 0;
+    padding: 10px 1rem;
   }
 
   /* align-items stays flex-end here, as in the original design */

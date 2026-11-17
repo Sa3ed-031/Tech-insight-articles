@@ -11,6 +11,8 @@
 
 .content {
   width: auto;
+  /* Lets the card shrink below its longest word instead of widening the page */
+  min-width: 0;
   padding: 0.9rem;
   display: flex;
   flex: 1 1 0%;
@@ -71,6 +73,7 @@
 
 .title {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .titleLink {
@@ -86,6 +89,7 @@
   font-size: 1rem;
   line-height: 1.5rem;
   color: var(--article-desc);
+  overflow-wrap: anywhere;
 }
 
 .readMore {
@@ -143,8 +147,44 @@
   border-radius: 15px 15px 0 0;
 }
 
+/* Card is a flex column: .body grows, so "Read more" sits at the bottom */
 .grid .content {
+  flex: 1 1 auto;
+  gap: 1rem;
   padding: 1rem;
+}
+
+.grid .body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Spacing comes from the gaps above */
+.grid .byline,
+.grid .description {
+  margin: 0;
+}
+
+.grid .title,
+.grid .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Match the h3 line box to the link inside, so 3 lines clamp cleanly */
+.grid .title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.grid .readMore {
+  align-self: flex-start;
 }
 
 @media (max-width: 540px) {
