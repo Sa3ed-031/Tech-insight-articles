@@ -1,3 +1,11 @@
+/* In-flow placeholder: keeps the page from collapsing while data loads */
+.container {
+  width: 100%;
+  min-height: 60vh;
+  min-height: 60dvh;
+  grid-column: 1 / -1;
+}
+
 /* Pinned to the viewport so the spinner is always in the center of the
    screen, no matter which container (list, grid, flex row) renders it */
 .wrapper {

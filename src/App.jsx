@@ -10,7 +10,10 @@ function App() {
       <ThemeProvider>
         <ScrollToTop />
         <Navbar />
-        <AppRouter />
+        {/* Fills the free height, so the footer stays at the bottom */}
+        <div className="app-content">
+          <AppRouter />
+        </div>
         <Footer />
       </ThemeProvider>
     </>

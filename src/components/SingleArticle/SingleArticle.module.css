@@ -8,12 +8,19 @@
   margin-left: auto;
   margin-right: auto;
   background-color: var(--section-bg);
+  /* Safety net only: the rules below keep content inside the viewport */
+  overflow-x: clip;
 }
 
+/* Auto margins disable flex stretching, so without an explicit width the
+   article sizes to its widest content (tables, code) and overflows on mobile */
 .article {
+  width: 100%;
   max-width: 56rem;
+  min-width: 0;
   margin-left: auto;
   margin-right: auto;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- Header ---------- */
@@ -27,6 +34,7 @@
   line-height: 1.25;
   letter-spacing: -0.025em;
   color: var(--heading-strong);
+  overflow-wrap: anywhere;
 }
 
 /* Attribution: author profile + link to the original DEV article */
@@ -60,11 +68,20 @@
 
 /* ---------- Article body (HTML from the DEV.to API) ---------- */
 .articleBody {
-  max-width: none;
+  max-width: 100%;
+  min-width: 0;
   font-size: 1.125rem;
   line-height: 1.75rem;
   color: var(--article-body-text);
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Wrappers inside the API HTML (DEV embeds, highlight blocks, figures...) */
+.articleBody :global(div),
+.articleBody :global(figure),
+.articleBody :global(section) {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .articleBody :global(p) {
@@ -74,10 +91,25 @@
 /* Images, videos and embeds never wider than the article */
 .articleBody :global(img),
 .articleBody :global(video),
-.articleBody :global(iframe) {
+.articleBody :global(iframe),
+.articleBody :global(embed),
+.articleBody :global(object) {
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
+}
+
+/* Tables scroll inside themselves instead of widening the page */
+.articleBody :global(table) {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Cells keep normal word wrapping; the table scrolls instead */
+.articleBody :global(th),
+.articleBody :global(td) {
+  overflow-wrap: normal;
 }
 
 .articleBody :global(iframe) {
@@ -105,6 +137,7 @@
 
 .articleBody :global(a) {
   color: var(--primary);
+  word-break: break-word;
 }
 
 .articleBody :global(blockquote) {
@@ -115,7 +148,11 @@
 }
 
 .articleBody :global(pre) {
+  max-width: 100%;
   overflow-x: auto;
+  /* Keep code lines intact; the block scrolls, not the page */
+  overflow-wrap: normal;
+  white-space: pre;
   padding: 1rem;
   border-radius: 0.5rem;
   background: var(--code-bg);
@@ -125,7 +162,15 @@
 }
 
 .articleBody :global(code) {
+  max-width: 100%;
   font-size: 0.9em;
+}
+
+/* Code blocks: scroll horizontally inside the block */
+.articleBody :global(pre code) {
+  display: block;
+  overflow-x: auto;
+  white-space: inherit;
 }
 
 /* Empty "#" links DEV.to puts next to headings */
