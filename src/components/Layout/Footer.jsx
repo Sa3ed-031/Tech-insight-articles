@@ -17,12 +17,12 @@ export default function Footer() {
         <NavLink to="/articles" className={styles.navLink}>
           Articles
         </NavLink>
-        <a href="#" className={styles.navLink}>
+        <NavLink to="/about" className={styles.navLink}>
           About
-        </a>
-        <a href="#" className={styles.navLink}>
+        </NavLink>
+        <NavLink to="/contact" className={styles.navLink}>
           Contact
-        </a>
+        </NavLink>
       </div>
       <div className={styles.meta}>
         <p className={styles.copyright}>

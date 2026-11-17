@@ -41,11 +41,6 @@
   --menu-border: #e5e7eb;
   --menu-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 
-  --signin-text: #075985;
-  --signin-text-hover: #075985;
-  --signin-bg: #d6ecf8;
-  --signin-bg-hover: #bfe1f4;
-
   /* ---------- Dark mode toggle ---------- */
   --toggle-track: lightgray;
   --toggle-track-on: white;
@@ -108,6 +103,18 @@
   /* Tables inside article HTML */
   --table-border: var(--border-subtle);
   --table-header-bg: var(--primary-tint-10);
+
+  /* ---------- About / Contact / 404 pages ---------- */
+  --page-card-bg: rgb(255 255 255 / 0.7);
+  --page-card-shadow: var(--shadow);
+  --input-bg: rgb(255 255 255);
+  --input-text: #313f47;
+  --input-border: rgb(120 113 108 / 0.4);
+  --input-placeholder: rgb(120 113 108);
+  --error: #b91c1c;
+  --success-text: #166534;
+  --success-bg: rgb(22 163 74 / 0.1);
+  --success-border: rgb(22 163 74 / 0.35);
 }
 
 :root[data-theme="dark"] {
@@ -126,11 +133,6 @@
   --menu-bg: #253036;
   --menu-border: rgb(255 255 255 / 0.08);
   --menu-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
-
-  --signin-text: #e0f2fe;
-  --signin-text-hover: #ffffff;
-  --signin-bg: #1b4f6b;
-  --signin-bg-hover: #1f5f82;
 
   /* ---------- Footer ---------- */
   --footer-border: #f0f0f0;
@@ -178,4 +180,16 @@
   /* --border-subtle is too faint on the dark background */
   --table-border: rgb(255 255 255 / 0.18);
   --table-header-bg: rgb(255 255 255 / 0.08);
+
+  /* ---------- About / Contact / 404 pages ---------- */
+  --page-card-bg: #313f47;
+  --page-card-shadow: 0.1px 0.1px 8px #f0f0f0;
+  --input-bg: #253036;
+  --input-text: #f0f0f0;
+  --input-border: rgb(255 255 255 / 0.25);
+  --input-placeholder: #e5e7eb99;
+  --error: #fca5a5;
+  --success-text: #bbf7d0;
+  --success-bg: rgb(134 239 172 / 0.12);
+  --success-border: rgb(134 239 172 / 0.4);
 }

@@ -20,7 +20,7 @@ export default function ArticlesArticle({
   } = article;
   const category = tag_list?.[0] ?? "General";
   const image =
-    cover_image || social_image || "/articles-project-articles-list-1.png";
+    cover_image || social_image || "/articles-project-articles-list-1.webp";
   const to = `/articles/${id}`;
 
   return (

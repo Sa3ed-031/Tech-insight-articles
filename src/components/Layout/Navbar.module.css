@@ -70,38 +70,14 @@
   color: var(--primary);
 }
 
+/* Same size as the switch inside (positioned absolutely), so the header's
+   space-evenly layout sees its real width and stays balanced */
 .toggleWrap {
-  margin-right: 1.7rem;
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 25px;
   background-color: transparent;
-}
-
-.signIn {
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.25rem;
-  padding: 0 1rem;
-  line-height: 1.25rem;
-  border-radius: 0.5rem;
-  /* Opaque colors so contrast doesn't depend on the content scrolling behind
-     the see-through header. Text/background contrast: 6.2:1 light, 7.7:1 dark (WCAG AA) */
-  color: var(--signin-text);
-  background-color: var(--signin-bg);
-}
-
-/* Hover keeps AA contrast: 5.5:1 light / 7:1 dark */
-.signIn:hover {
-  color: var(--signin-text-hover);
-  background-color: var(--signin-bg-hover);
-}
-
-/* Hide the outline for mouse clicks only; keyboard focus still shows it */
-.signIn:focus:not(:focus-visible) {
-  outline: none;
 }
 
 @media (max-width: 768px) {
@@ -181,14 +157,5 @@
 @media (max-width: 400px) {
   .logo {
     margin: 0 0.5rem;
-  }
-
-  .toggleWrap {
-    margin-left: -1rem;
-  }
-
-  .signIn {
-    margin: 0;
-    margin-left: 1.1rem;
   }
 }

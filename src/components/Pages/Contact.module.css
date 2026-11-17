@@ -1,0 +1,112 @@
+/* Form on the left, direct links on the right (stacked below 1024px,
+   where the side column gets too narrow for the email address) */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading-strong);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.5rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--input-text);
+  background-color: var(--input-bg);
+}
+
+textarea.input {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-tint-20);
+}
+
+.input.invalid {
+  border-color: var(--error);
+}
+
+.input.invalid:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--error) 25%, transparent);
+}
+
+.error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--error);
+}
+
+.submit {
+  align-self: flex-start;
+}
+
+.success {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--success-border);
+  border-radius: 0.75rem;
+  line-height: 1.5rem;
+  color: var(--success-text);
+  background-color: var(--success-bg);
+  overflow-wrap: anywhere;
+}
+
+.success svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* Direct links, one per row */
+.direct {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .submit {
+    align-self: stretch;
+  }
+}

@@ -12,7 +12,7 @@ export default function Article({ article }) {
           src={
             article.cover_image ||
             article.social_image ||
-            "/articles-project-article-1.png"
+            "/articles-project-article-1.webp"
           }
           alt={article.title}
         />

@@ -63,19 +63,17 @@ export default function Navbar() {
         <NavLink to="/articles" className={navLinkClass}>
           Articles
         </NavLink>
-        <a href="#" className={styles.link}>
+        <NavLink to="/about" className={navLinkClass}>
           About
-        </a>
-        <a href="#" className={styles.link}>
+        </NavLink>
+        <NavLink to="/contact" className={navLinkClass}>
           Contact
-        </a>
+        </NavLink>
       </div>
 
       <div className={styles.toggleWrap}>
         <DarkToggleButton />
       </div>
-
-      <button className={styles.signIn}>Sign In</button>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+/* Card centered in the free space between navbar and footer */
+.page {
+  justify-content: center;
+}
+
+.page .card {
+  width: 100%;
+  max-width: 32rem;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+.code {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+}
+
+.home {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .page .card {
+    padding: 2rem 1.25rem;
+  }
+
+  .code {
+    font-size: 4rem;
+  }
+}

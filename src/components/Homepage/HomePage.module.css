@@ -29,7 +29,7 @@
   background-repeat: no-repeat;
   background-image:
     linear-gradient(var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%),
-    url("/articles-project-landing-bg.png");
+    url("/articles-project-landing-bg.webp");
 }
 
 .landing h1 {

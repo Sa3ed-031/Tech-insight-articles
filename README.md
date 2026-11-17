@@ -14,6 +14,9 @@ Tech Insight is a responsive tech blog built with React. It loads real, up-to-da
 - **Filters** by topic/tag
 - **Pagination** to move through the articles
 - **Article page** with the full content, cover image, author info, a link to the original post, and **related articles**
+- **About page** describing the project, its features, content attribution and the author
+- **Contact page** with a validated form (name, email, message) that opens your email app, plus direct email, LinkedIn and GitHub links
+- **404 page** for unknown routes, with a way back to Home
 - **Light/dark mode**, remembered between visits
 - **Responsive** layout for mobile, tablet and desktop
 
@@ -23,6 +26,7 @@ Tech Insight is a responsive tech blog built with React. It loads real, up-to-da
 - [React Router](https://reactrouter.com/) 7
 - [Vite](https://vite.dev/) 7
 - CSS Modules for styling
+- [MUI Icons](https://mui.com/material-ui/material-icons/) for icons, and MUI's `CircularProgress` for the loading spinner
 - [Poppins](https://fontsource.org/fonts/poppins) via `@fontsource/poppins`
 - [DEV Community (Forem) API](https://developers.forem.com/api)
 - Deployed on [Netlify](https://www.netlify.com/)
